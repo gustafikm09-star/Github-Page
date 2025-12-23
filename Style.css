@@ -1,7 +1,39 @@
 body{
-    background-color: brown;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-h3{
-    color: black;
+.menu{
+    display: flex;
+    justify-content: baseline;
+    gap: 100px;
+    padding: 10px 40px;
+    border-radius: 15px;
+    background-color: red;
+}
+
+.menu_options{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.menu_button{
+    color: white;
+    background-color: #750000;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    border: 1px solid #000000;
+    transition: 0.3;
+}
+
+.menu_button:hover{
+    border: 1px solid #000000;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    box-shadow: 10px 10px 10px rgb(0,0,0,0.2);
 }
