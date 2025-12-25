@@ -71,3 +71,9 @@ body{
     color: #ffffff;
     box-shadow: 8px 8px 10px rgb(134, 0, 0);
 }
+
+.text_main{
+    border-radius: 10px ;
+    padding: 10px ;
+    box-shadow: 0px 0px 60px rgb(121, 0, 0);
+}
