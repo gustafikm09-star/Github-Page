@@ -8,9 +8,9 @@ class MyMenu extends HTMLElement {
                 <label for="menu-toggle" class="hamburger">&#9776;</label>
 
                 <div class="menu_options">
-                    <a href="Projects.html" class="menu_button">Projects</a>
-                    <a href="Sites.html" class="menu_button">Sites</a>
-                    <a href="About_Myself.html" class="menu_button">About myself</a>
+                    <a href="projects.html" class="menu_button">Projects</a>
+                    <a href="sites.html" class="menu_button">Sites</a>
+                    <a href="about_myself.html" class="menu_button">About myself</a>
                 </div>
             </div>
         `;
