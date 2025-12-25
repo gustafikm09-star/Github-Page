@@ -17,7 +17,15 @@ body{
                                
                                */
 
-.menu{
+my-menu {
+    display: block;
+    width: 100%;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+}
+
+.menu {
     width: auto;
     height: 80px;
     transform: skewX(-25deg);
@@ -28,9 +36,6 @@ body{
     background-color: rgb(0, 0, 0);
     box-shadow: 0px 0px 30px rgb(121, 0, 0);
     border-radius: 10px;
-    position: sticky;
-    top: 20px;
-    z-index: 1000;
 }
 
 .menu_options{
@@ -83,10 +88,81 @@ body{
 
 .content{
     background-color: rgba(83, 0, 0, 0.226);
-    margin-inline: 80px ;
+    margin-inline: 3% ;
     width: auto ;
     height: 1000px ;
     border-radius: 10px ;
     padding: 40px ;
     box-shadow: 0px 0px 20px rgb(83, 0, 0, 0.526);
+}
+
+
+
+/*
+                          
+▄▄▄▄▄▄▄         
+███▀▀███▄       
+███▄▄███▀ ▄████ 
+███▀▀▀▀   ██    
+███       ▀████ 
+                             
+*/
+
+/* --- Desktop: Hide the mobile parts by default --- */
+.hamburger, .menu-checkbox {
+    display: none;
+}
+
+
+
+
+
+
+/*
+                                      
+▄▄▄      ▄▄▄       ▄▄        ▄▄       
+████▄  ▄████       ██    ▀▀  ██       
+███▀████▀███ ▄███▄ ████▄ ██  ██ ▄█▀█▄ 
+███  ▀▀  ███ ██ ██ ██ ██ ██  ██ ██▄█▀ 
+███      ███ ▀███▀ ████▀ ██▄ ██ ▀█▄▄▄ 
+                                      
+*/
+
+/* --- Mobile: When screen is small --- */
+@media (max-width: 768px) {
+    
+    /* 1. Show the Hamburger Icon */
+    .hamburger {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+    }
+
+    /* 2. Hide the actual buttons off-screen or collapse them */
+    .menu_options {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 85px; 
+        right: 0;
+        background-color: black;
+        width: auto;
+        padding: 20px;
+        gap: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 30px rgb(121, 0, 0);
+        transform: skewX(25deg); /* Re-skewing to match your style */
+    }
+
+    /* 3. The Magic: Show menu when checkbox is checked */
+    .menu-checkbox:checked ~ .menu_options {
+        display: flex;
+    }
+
+    /* 4. Make buttons look better inside the dropdown */
+    .menu_options .menu_button {
+        width: 80%;
+        max-width: none;
+    }
 }
