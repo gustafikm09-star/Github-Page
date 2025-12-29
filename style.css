@@ -19,7 +19,7 @@ body{
 
 my-menu {
     display: block;
-    width: 100%;
+    width: auto;
     position: sticky;
     top: 20px;
     z-index: 1000;
@@ -137,7 +137,14 @@ my-menu {
 /* --- Mobile: When screen is small --- */
 @media (max-width: 768px) {
 
-    
+    body {
+        padding: 20px 0px; 
+    }
+
+   my-menu {
+        margin-inline: 20px;
+    }
+
     /* 1. Show the Hamburger Icon */
     .hamburger {
         display: none; /* Hidden on desktop */
