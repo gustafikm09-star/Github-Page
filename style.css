@@ -87,13 +87,19 @@ my-menu {
 }
 
 .content{
-    background-color: rgba(83, 0, 0, 0.226);
+    background-color: rgba(83, 0, 0, 0.445);
     margin-inline: 3% ;
     width: auto ;
-    height: 1000px ;
+    height: auto ;
     border-radius: 10px ;
     padding: 40px ;
     box-shadow: 0px 0px 20px rgb(83, 0, 0, 0.526);
+}
+
+.content img{
+    width: auto ;
+    max-width: 100% ;
+    height: 60% ;
 }
 
 
@@ -142,7 +148,7 @@ my-menu {
         justify-content: space-between;
         cursor: pointer;
         transform: skewX(25deg); /* Counter-skew so it looks straight */
-    }
+    }   
 
     .line {
         display: block;
