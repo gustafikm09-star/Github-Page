@@ -5,7 +5,11 @@ class MyMenu extends HTMLElement {
                 <a href="index.html" class="menu_button">Martin Guštafík</a>
                 
                 <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-                <label for="menu-toggle" class="hamburger">&#9776;</label>
+                <label for="menu-toggle" class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </label>
 
                 <div class="menu_options">
                     <a href="projects.html" class="menu_button">Projects</a>

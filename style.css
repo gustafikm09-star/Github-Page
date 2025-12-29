@@ -130,20 +130,34 @@ my-menu {
 
 /* --- Mobile: When screen is small --- */
 @media (max-width: 768px) {
+
     
     /* 1. Show the Hamburger Icon */
     .hamburger {
-        display: block;
-        font-size: 2rem;
+        display: none; /* Hidden on desktop */
+        width: 30px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         cursor: pointer;
-        color: white;
+        transform: skewX(25deg); /* Counter-skew so it looks straight */
+    }
+
+    .line {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
     }
 
     /* 2. Hide the actual buttons off-screen or collapse them */
     .menu_options {
-        display: none; /* Hidden by default */
+        display: flex;
         flex-direction: column;
-        position: absolute;
+        position: absolute ;
         top: 85px; 
         right: 0;
         background-color: black;
@@ -151,18 +165,42 @@ my-menu {
         padding: 20px;
         gap: 15px;
         border-radius: 10px;
-        box-shadow: 0px 10px 30px rgb(121, 0, 0);
-        transform: skewX(25deg); /* Re-skewing to match your style */
+        box-shadow: 0px 0px 15px rgb(134, 0, 0);
+        transform: skewX(25deg);
+
+        /* --- ANIMATION START STATE --- */
+        transform: skewX(25deg) translateY(-20px) scaleY(0);
+        transform-origin: top; /* Makes it slide FROM the top */
+        opacity: 0;
+        pointer-events: none; /* Prevents clicking buttons while hidden */
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* 3. The Magic: Show menu when checkbox is checked */
+    /* --- ANIMATION END STATE (When Checked) --- */
+    .menu-checkbox:checked ~ .menu_options {
+        transform: skewX(25deg) translateY(0) scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* 3. Show menu when checkbox is checked */
     .menu-checkbox:checked ~ .menu_options {
         display: flex;
     }
 
-    /* 4. Make buttons look better inside the dropdown */
-    .menu_options .menu_button {
-        width: 80%;
-        max-width: none;
+    /* 1. Top line tilts down */
+    .menu-checkbox:checked ~ .hamburger .line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    /* 2. Middle line disappears */
+    .menu-checkbox:checked ~ .hamburger .line:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    /* 3. Bottom line tilts up */
+    .menu-checkbox:checked ~ .hamburger .line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 }
