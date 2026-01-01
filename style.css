@@ -100,8 +100,8 @@ my-menu {
     width: 1000px ;
     max-width: 100%;
     height: auto ;
+    border: 10px solid rgb(102, 0, 0) ;
 }
-
 
 
 /*
